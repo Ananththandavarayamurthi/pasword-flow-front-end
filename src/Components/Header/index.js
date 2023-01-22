@@ -9,7 +9,7 @@ const Header = () => {
     
     const handleLogout = async () => {
         const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/signout`, {userCredentials: true});
-        if(!response){
+        if(response){
             removeCookie('accessToken');
             navigate('/login')
         }
