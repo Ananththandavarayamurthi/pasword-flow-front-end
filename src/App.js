@@ -30,6 +30,7 @@ function App() {
               <Route path="/forgotPassword" element={<ForgotPassword />} />
               <Route path="/passwordReset" element={<ResetPassword />} />
               <Route path="/home" element={<Home data={{setData,data}}/>}/>
+              <Route path="/" element={<Login data={{data,setData}}/>}/>
     
             
           </Routes>
