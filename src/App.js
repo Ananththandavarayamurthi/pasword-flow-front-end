@@ -25,7 +25,7 @@ function App() {
           <Header />
           <Routes>
             
-              <Route path='/login' element={<Login data={{data,setData}}/>} />
+              <Route exact path='/login' element={<Login data={{data,setData}}/>} />
               <Route path="/register" element={<Register/>} />
               <Route path="/forgotPassword" element={<ForgotPassword />} />
               <Route path="/passwordReset" element={<ResetPassword />} />
