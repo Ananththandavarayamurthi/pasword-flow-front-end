@@ -9,7 +9,7 @@ function Home(props) {
    const json = props.data.data
     console.log(json)
   return (
-    <div>{!json.name?(navigate("/login")):(
+    <div>{!props.data.data.name?(navigate("./login")):(
          <Card style={{ width: '18rem' }}>
       <Card.Body>
         <Card.Title>NAME:{json.name}</Card.Title>

@@ -22,10 +22,10 @@ function App() {
   return (
     <UserContext.Provider value={{user, setUser, loading}}>
       <div>
-          <Header />
+          <Header data={{data,setData}}/>
           <Routes>
             
-              <Route exact path='/login' element={<Login data={{data,setData}}/>} />
+              <Route  path='/login' element={<Login data={{data,setData}}/>} />
               <Route path="/register" element={<Register/>} />
               <Route path="/forgotPassword" element={<ForgotPassword />} />
               <Route path="/passwordReset" element={<ResetPassword />} />

@@ -3,19 +3,21 @@ import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import Nav from 'react-bootstrap/Nav';
 
-const Header = () => {
+const Header = (props) => {
     const navigate = useNavigate();
-    const [removeCookie] = useCookies(['accessToken']);
+    const [cookie, setCookie,removeCookie] = useCookies(['accessToken']);
     
     const handleLogout = async () => {
-        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/signout`, {userCredentials: true});
+         const response= await axios.get(`${process.env.REACT_APP_BASE_URL}/signout`, {userCredentials: true});
       //  response?(removeCookie("accsessToken"),navigate("/login")):(navigate("/login"))
-       
-        if(response){
-            removeCookie('accessToken');
-            navigate('/login')
-        }
-        navigate("/login")
+      if(response){
+        props.data.setData(null)
+        removeCookie('accessToken');
+    navigate('/login')
+    
+        
+    }
+    navigate("/login") 
     }
 
     return (
